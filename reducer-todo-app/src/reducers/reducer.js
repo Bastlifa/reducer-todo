@@ -5,7 +5,7 @@ export const reducer = (state, action) =>
         case 'ADD':
             return [...state, action.todo]
         case 'TOGGLE_COMPLETED':
-            return state.map(el => el.id === action.id ? {...el, completed: !el.completed} : el)
+            return state.map(el => el.id === action.id ? {...el, completed: !el.completed, timeCompleted: Date.now()} : el)
         case 'CLEAR_COMPLETED':
             return state.filter(el => el.completed === false)
         default:
@@ -18,6 +18,7 @@ export const initialState =
     {
         item: "Learn about reducers",
         completed: false,
-        id: 3892987589
+        id: Date.now(),
+        timeCompleted: ''
     }
 ]

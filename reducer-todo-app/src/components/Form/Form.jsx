@@ -14,7 +14,7 @@ const Form = () =>
     const submitHandle = e =>
     {
         e.preventDefault()
-        dispatch({type: "ADD", todo: {item: curInput, id: Date.now(), completed: false}})
+        dispatch({type: "ADD", todo: {item: curInput, id: Date.now(), completed: false, timeCompleted: ''}})
         setCurInput("")
         console.log("state from submit", state)
 
