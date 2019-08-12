@@ -19,11 +19,17 @@ const Form = () =>
         console.log("state from submit", state)
 
     }
+    const clearHandle = e =>
+    {
+        e.preventDefault()
+        dispatch({type: "CLEAR_COMPLETED"})
+    }
     return (
         <>
             <form>
                 <input type="text" value={curInput} onChange={handleChange}/>
-                <button onClick={submitHandle}>Add Todo</button>
+                <button onClick={submitHandle} type="submit">Add Todo</button>
+                <button onClick={clearHandle}>Clear Completed</button>
             </form>
             <TodoList todos={state} dispatch={dispatch} />
         </>
