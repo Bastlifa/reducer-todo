@@ -4,6 +4,8 @@ export const reducer = (state, action) =>
     {
         case 'ADD':
             return [...state, action.todo]
+        case 'TOGGLE_COMPLETED':
+            return state.map(el => el.id === action.id ? {...el, completed: !el.completed} : el)
         default:
             return state
     }

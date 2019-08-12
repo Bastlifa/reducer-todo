@@ -25,7 +25,7 @@ const Form = () =>
                 <input type="text" value={curInput} onChange={handleChange}/>
                 <button onClick={submitHandle}>Add Todo</button>
             </form>
-            <TodoList todos={state} />
+            <TodoList todos={state} dispatch={dispatch} />
         </>
     )
 }
