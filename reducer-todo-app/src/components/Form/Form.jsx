@@ -24,6 +24,7 @@ const Form = () =>
         e.preventDefault()
         dispatch({type: "CLEAR_COMPLETED"})
     }
+
     return (
         <>
             <form>
@@ -31,7 +32,7 @@ const Form = () =>
                 <button onClick={submitHandle} type="submit">Add Todo</button>
                 <button onClick={clearHandle}>Clear Completed</button>
             </form>
-            <TodoList todos={state} dispatch={dispatch} />
+            <TodoList todos={state.notNeeded} dispatch={dispatch} />
         </>
     )
 }
