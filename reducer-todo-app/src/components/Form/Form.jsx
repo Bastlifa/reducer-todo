@@ -32,7 +32,7 @@ const Form = () =>
                 <button onClick={submitHandle} type="submit">Add Todo</button>
                 <button onClick={clearHandle}>Clear Completed</button>
             </form>
-            <TodoList todos={state.notNeeded} dispatch={dispatch} />
+            <TodoList todos={state.aTodos} dispatch={dispatch} />
         </>
     )
 }

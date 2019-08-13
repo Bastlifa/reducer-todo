@@ -3,14 +3,14 @@ export const reducer = (state, action) =>
     switch(action.type)
     {
         case 'ADD':
-            return {...state, notNeeded: [...state.notNeeded, action.todo]}
+            return {...state, aTodos: [...state.aTodos, action.todo]}
         case 'TOGGLE_COMPLETED':
             return {
                 ...state, 
-                notNeeded: state.notNeeded.map(el => el.id === action.id ? {...el, completed: !el.completed, timeCompleted: Date.now()} : el)
+                aTodos: state.aTodos.map(el => el.id === action.id ? {...el, completed: !el.completed, timeCompleted: Date.now()} : el)
             }
         case 'CLEAR_COMPLETED':
-            return {...state, notNeeded: state.notNeeded.filter(el => el.completed === false) }
+            return {...state, aTodos: state.aTodos.filter(el => el.completed === false) }
         default:
             return state
     }
@@ -18,7 +18,7 @@ export const reducer = (state, action) =>
 
 export const initialState = 
 {
-    notNeeded:
+    aTodos:
     [
         {
             item: "Learn about reducers",
